@@ -13,7 +13,7 @@
 
 
 ## messagesテーブル
-||Column|Type|Options|
+|Column|Type|Options|
 |------|----|-------|
 |body|text||
 |image|text||
@@ -25,7 +25,7 @@
 
 
 ## groupsテーブル
-||Column|Type|Options|
+|Column|Type|Options|
 |------|----|-------|
 |group_name|string|null:false|
 ### Association
