@@ -10,6 +10,7 @@
 ### Association
 - has_many :messages
 - has_many :groups, through: :users_groups
+- has_many :users_groups
 
 
 ## messagesテーブル
@@ -27,10 +28,11 @@
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|group_name|string|null:false|
+|group|string|null:false|
 ### Association
 - has_many :messages
 - has_many :users, through: :users_groups
+- has_many :users_groups
 
 
 ## users_groupsテーブル
