@@ -1,0 +1,32 @@
+.Main
+
+
+  .Main__header
+    %ul.Group-info
+      %li.Group-info__name
+        test
+      %li.Group-info__member
+        member : 太一
+    = link_to "#", class: "Edit" do
+      Edit
+
+
+  .Main__message
+    .MessageBox
+      .MessageInfo
+        .Name
+          太一
+        .Date
+          2020/06/09 (Tue) 17;00
+      .MessageContent
+        おはようございます！
+
+
+  .Main__footer
+    %form.Form
+      .Box
+        %input{type: "text", placeholder: "type a message",class: "Box__text"}
+        %label{class: "Box__image"}
+          = icon('fas', 'image')
+          %input{type: "file", class: "Box__image__file"}
+      %input{type: "submit", value: "SEND", class: "Send"}

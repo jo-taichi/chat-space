@@ -1,0 +1,20 @@
+.Side
+
+
+  .Side__header
+    %ul.Top-items
+      %li.Top-items__name
+        太一
+      %li.Top-items__icons
+        = link_to "#", class: "Top-items__icons__edit" do
+          = icon('far', 'edit')
+        = link_to "#", class: "Top-items__icons__new-group" do
+          = icon('fas', 'cog')
+
+
+  .Side__main
+    .Group-list
+      .Group-list__name
+        太一の部屋
+      .Group-list__message
+        おはようございます！
