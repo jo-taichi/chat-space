@@ -3,13 +3,12 @@
   .Side__header
     %ul.Top-items
       %li.Top-items__name
-        太一
+        = current_user.name
       %li.Top-items__icons
         = link_to "#", class: "Top-items__icons__edit" do
           = icon('far', 'edit')
-        = link_to "#", class: "Top-items__icons__new-group" do
+        = link_to edit_user_path(current_user), class: "Top-items__icons__new-group" do
           = icon('fas', 'cog')
-
   .Side__main
     .Group-list
       .Group-list__name
