@@ -5,13 +5,15 @@
       %li.Top-items__name
         = current_user.name
       %li.Top-items__icons
-        = link_to "#", class: "Top-items__icons__edit" do
+        = link_to new_group_path, class: "Top-items__icons__edit" do
           = icon('far', 'edit')
         = link_to edit_user_path(current_user), class: "Top-items__icons__new-group" do
           = icon('fas', 'cog')
   .Side__main
-    .Group-list
-      .Group-list__name
-        太一の部屋
-      .Group-list__message
-        おはようございます！
+    - current_user.groups.each do |group|
+      .Group-list
+        = link_to '#' do
+          .Group-list__name
+            = group.name
+          .Group-list__message
+            メッセージはまだありません
