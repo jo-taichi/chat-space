@@ -3,27 +3,21 @@
   .Main__header
     %ul.Group-info
       %li.Group-info__name
-        test
+        = @group.name
       %li.Group-info__member
-        member : 太一
-    = link_to "#", class: "Edit" do
-      Edit
+        = "member:"
+        - @group.users.each do |user|
+          = user.name
+    = link_to "Edit", edit_group_path(@group) , class: "Edit"
 
   .Main__message
-    .MessageBox
-      .MessageInfo
-        .Name
-          太一
-        .Date
-          2020/06/09 (Tue) 17;00
-      .MessageContent
-        おはようございます！
+    = render @messages
 
   .Main__footer
-    %form.Form
+    = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
       .Box
-        %input{type: "text", placeholder: "type a message",class: "Box__text"}
-        %label{class: "Box__image"}
-          = icon('fas', 'image')
-          %input{type: "file", class: "Box__image__file"}
-      %input{type: "submit", value: "SEND", class: "Send"}
+        = f.text_field :content, class: 'Box__text', placeholder: 'type a message'
+        = f.label :image, class: 'Box__image' do
+          = icon('far', 'image', class: 'Box__icon')
+          = f.file_field :image, class: 'Box__image__file'
+      = f.submit 'Send', class: 'Send'
